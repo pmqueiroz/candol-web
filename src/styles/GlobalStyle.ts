@@ -11,7 +11,7 @@ export default createGlobalStyle`
    input,
    button,
    textarea {
-      font: 500 1.6rem Poppins;
+      font: 500 1.6rem Roboto;
       color: var(--color-text-base);
       border: none;
       background: none;
@@ -26,6 +26,7 @@ export default createGlobalStyle`
       --color-primary: #863FCE;
       --color-primary-darker: #702EB2;
       --color-text-base: #535067;
+      --color-text-secondary: #B2AEC2;
       --color-text-inactive: #E5E5E5;
       --color-background: #ffffff;
       --color-background-darker: #F7F8FA;

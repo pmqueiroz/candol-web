@@ -5,7 +5,6 @@ export default function Home() {
     <div>
       <Head>
         <title>Candol</title>
-        <link rel="icon" href="/favicon.svg" />
       </Head>
 
       <h1>Hello Word</h1>
