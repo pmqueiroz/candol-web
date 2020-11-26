@@ -108,7 +108,6 @@ export const Menu = styled.nav`
          }
       }
 
-
       .addNew {
          * {
             color: var(--color-text-inactive);

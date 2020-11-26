@@ -1,7 +1,9 @@
 import Head from 'next/head';
+import { useState } from 'react';
 import {
    FiChevronLeft,
    FiChevronRight,
+   FiChevronDown,
    FiCalendar,
    FiUser,
    FiUserPlus,
@@ -11,6 +13,12 @@ import { Container, Main, Header, AsideLeft, AsideRight, Menu } from '../../styl
 import logoImg from '../../assets/logo.svg';
 
 export default function Dashboard() {
+   const [ menuIsVisible, setMenuIsVisible ] = useState(false);
+
+   function handleMenuVisibility () {
+      setMenuIsVisible(!menuIsVisible);
+   }
+
    return (
       <div>
          <Head>
@@ -28,29 +36,39 @@ export default function Dashboard() {
                      </li>
                      <li >
                         <FiUsers />
-                        <a href="#">Técnicos</a>
-                        <ul>
-                           <li>
-                              <FiUser />
-                              <a href="#">Daniel</a>
-                           </li>
-                           <li>
-                              <FiUser />
-                              <a href="#">Virgílio</a>
-                           </li>
-                           <li>
-                              <FiUser />
-                              <a href="#">Sandro</a>
-                           </li>
-                           <li>
-                              <FiUser />
-                              <a href="#">Pitta</a>
-                           </li>
-                           <li className="addNew">
-                              <FiUserPlus />
-                              <a href="#">Adicionar</a>
-                           </li>
-                        </ul>
+                        <a href="#" onClick={handleMenuVisibility}>
+                           Técnicos
+                           {menuIsVisible ?
+                              <FiChevronDown/>
+                           :  <FiChevronRight/>
+                           }
+                        </a>
+                        {menuIsVisible ?
+
+                           <ul>
+                              <li>
+                                 <FiUser />
+                                 <a href="#">Daniel</a>
+                              </li>
+                              <li>
+                                 <FiUser />
+                                 <a href="#">Virgílio</a>
+                              </li>
+                              <li>
+                                 <FiUser />
+                                 <a href="#">Sandro</a>
+                              </li>
+                              <li>
+                                 <FiUser />
+                                 <a href="#">Pitta</a>
+                              </li>
+                              <li className="addNew">
+                                 <FiUserPlus />
+                                 <a href="#">Adicionar</a>
+                              </li>
+                           </ul>
+                        : null
+                        }
                      </li>
                   </ul>
                </Menu>
