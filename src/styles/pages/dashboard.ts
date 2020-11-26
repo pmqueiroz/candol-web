@@ -58,9 +58,55 @@ export const AsideLeft = styled.div`
    justify-content: space-between;
    align-items: center;
    flex-direction: column;
-   margin: 10rem 3rem 3rem 3rem;
+   margin: 6rem 3rem 3rem 3rem;
    flex: 1;
    background: var(--color-background);
+   div.user {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font: 500 1.8rem Roboto;
+      img {
+         height: 6rem;
+         width: 6rem;
+         border-radius: 1rem;
+         margin: 2rem;
+      }
+   }
+`;
+
+export const Menu = styled.nav`
+   padding-left: 4rem;
+   width: 100%;
+   font: 500 2rem Roboto;
+   line-height: 3.5rem;
+   ul {
+      list-style: none;
+      width: 100%;
+      li a {
+         color: var(--color-text-base);
+         text-decoration: none;
+         padding: 1rem;
+      }
+
+      ul li {
+         margin-left: 4rem;
+         border-radius: 1rem;
+      }
+
+      .item {
+         display: flex;
+         align-items: center;
+         flex-direction: row;
+      }
+
+      .addNew {
+         * {
+            color: var(--color-text-inactive);
+            font: 400 2rem Roboto;
+         }
+      }
+   }
 `;
 
 export const AsideRight = styled.div`

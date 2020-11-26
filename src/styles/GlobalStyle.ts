@@ -5,6 +5,7 @@ export default createGlobalStyle`
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      user-select: none;
    }
 
    body,
@@ -30,6 +31,7 @@ export default createGlobalStyle`
       --color-text-inactive: #E5E5E5;
       --color-background: #ffffff;
       --color-background-darker: #F7F8FA;
+      --color-background-select: #EEF0F2;
    }
 
    @media (min-width: 850px) {
