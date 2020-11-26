@@ -79,7 +79,7 @@ export const Menu = styled.nav`
    padding-left: 4rem;
    width: 100%;
    font: 500 2rem Roboto;
-   line-height: 3.5rem;
+   line-height: 5rem;
    ul {
       list-style: none;
       width: 100%;
@@ -88,16 +88,15 @@ export const Menu = styled.nav`
          text-decoration: none;
          padding: 1rem;
       }
+      li:hover {
+         * {
+            color: var(--color-primary);
+         }
+      }
 
       ul li {
          margin-left: 4rem;
          border-radius: 1rem;
-      }
-
-      .item {
-         display: flex;
-         align-items: center;
-         flex-direction: row;
       }
 
       .addNew {

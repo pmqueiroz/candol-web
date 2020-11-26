@@ -22,7 +22,7 @@ export default function Dashboard() {
                <img src={logoImg} alt="Condol"/>
                <Menu>
                   <ul>
-                     <li className="item">
+                     <li>
                         <FiCalendar />
                         <a href="#">Calendário</a>
                      </li>
@@ -30,19 +30,19 @@ export default function Dashboard() {
                         <FiUsers />
                         <a href="#">Técnicos</a>
                         <ul>
-                           <li className="item">
+                           <li>
                               <FiUser />
                               <a href="#">Daniel</a>
                            </li>
-                           <li className="item">
+                           <li>
                               <FiUser />
                               <a href="#">Virgílio</a>
                            </li>
-                           <li className="item">
+                           <li>
                               <FiUser />
                               <a href="#">Sandro</a>
                            </li>
-                           <li className="item">
+                           <li>
                               <FiUser />
                               <a href="#">Pitta</a>
                            </li>
