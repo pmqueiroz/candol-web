@@ -45,6 +45,14 @@ export const Header = styled.div`
             font-size: 2rem;
             color: var(--color-text-secondary);
          }
+
+         &:hover {
+            border-color: var(--color-primary);
+            cursor: pointer;
+            svg {
+               color: var(--color-primary);
+            }
+         }
       }
       label {
          margin: 0 1rem;
@@ -88,16 +96,18 @@ export const Menu = styled.nav`
          text-decoration: none;
          padding: 1rem;
       }
-      li:hover {
-         * {
-            color: var(--color-primary);
-         }
-      }
 
       ul li {
          margin-left: 4rem;
          border-radius: 1rem;
+         transition: color 0.2s linear;
+         &:hover {
+            * {
+               color: var(--color-primary);
+            }
+         }
       }
+
 
       .addNew {
          * {
