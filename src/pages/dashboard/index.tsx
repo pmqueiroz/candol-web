@@ -26,12 +26,18 @@ import {
    TaskTime,
    TaskView,
    TaskTools,
-   NoteCard
+   NoteCard,
 } from '../../styles/pages/dashboard';
 import logoImg from '../../assets/logo.svg';
+import Modal from 'react-modal';
 
 export default function Dashboard() {
    const [ menuIsVisible, setMenuIsVisible ] = useState(false);
+   const [ modalIsOpen, setIsOpen] = useState(false);
+
+   function handleToggleModalVisibility() {
+      setIsOpen(!modalIsOpen);
+   }
 
    function handleMenuVisibility () {
       setMenuIsVisible(!menuIsVisible);
@@ -107,6 +113,12 @@ export default function Dashboard() {
          </Head>
 
          <Container>
+            <Modal
+               isOpen={modalIsOpen}
+               onRequestClose={handleToggleModalVisibility}
+               contentLabel="Example Modal"
+            >aaaa
+            </Modal>
             <AsideLeft>
                <img src={logoImg} alt="Condol"/>
                <Menu>
@@ -223,7 +235,7 @@ export default function Dashboard() {
                   </NoteCard>
                ))}
 
-               <FiPlus/>
+               <FiPlus onClick={handleToggleModalVisibility}/>
             </AsideRight>
          </Container>
       </div>

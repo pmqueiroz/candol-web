@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Modal from 'react-modal';
 
 export const Container = styled.div`
    display: flex;
@@ -282,4 +283,13 @@ export const NoteCard = styled.div`
    background: var(--color-background-darker);
    border-radius: 1rem;
    font: 400 1.6rem Roboto;
+`;
+
+export const AddNote = styled(Modal)`
+   top: 50%;
+   left: 50%;
+   right: auto;
+   bottom: auto;
+   margin-right: -50%;
+   transform: translate(-50%, -50%);
 `;
