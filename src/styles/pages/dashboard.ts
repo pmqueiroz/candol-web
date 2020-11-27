@@ -153,7 +153,21 @@ export const Menu = styled.nav`
 export const AsideRight = styled.div`
    display: flex;
    flex: 1;
+   justify-content: start;
+   align-items: center;
+   flex-direction: column;
+   padding: 6rem 3rem 3rem 3rem;
    background: var(--color-background);
+
+   svg {
+      margin: 1.5rem 0 0 auto;
+      font-size: 2rem;
+      stroke-width: 0.35rem;
+
+      &:hover {
+         cursor: pointer;
+      }
+   }
 `;
 
 export const TaskCard = styled.div`
@@ -258,4 +272,14 @@ export const TaskTools = styled.div`
          transform: translateY(-0.1rem);
       }
    }
+`;
+
+export const NoteCard = styled.div`
+   width: 100%;
+   height: auto;
+   margin-top: 2rem;
+   padding: 1rem;
+   background: var(--color-background-darker);
+   border-radius: 1rem;
+   font: 400 1.6rem Roboto;
 `;

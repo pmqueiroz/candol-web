@@ -11,7 +11,8 @@ import {
    FiUsers,
    FiEdit2,
    FiCheckCircle,
-   FiMapPin
+   FiMapPin,
+   FiPlus
 } from 'react-icons/fi';
 import {
    Container,
@@ -24,7 +25,8 @@ import {
    TaskInfo,
    TaskTime,
    TaskView,
-   TaskTools
+   TaskTools,
+   NoteCard
 } from '../../styles/pages/dashboard';
 import logoImg from '../../assets/logo.svg';
 
@@ -86,6 +88,16 @@ export default function Dashboard() {
          address: "Rua da Ficção, Número 1, Quadra B",
          type: "Instalação"
       },
+   ]
+   const notes = [
+      {
+         id: 1,
+         message: "Verificar se o equipamento de 9 horas é um MXT",
+      },
+      {
+         id: 2,
+         message: "Acompanhar o técnico até a chegada, e ao chegar informar ao cliente para dar autorização na entrada",
+      }
    ]
 
    return (
@@ -202,6 +214,16 @@ export default function Dashboard() {
                </Scrollbars>
             </Main>
             <AsideRight>
+               <h2>Notas</h2>
+
+               {notes.map(note => (
+                  <NoteCard key={note.id}>
+                     <p>{note.message}</p>
+
+                  </NoteCard>
+               ))}
+
+               <FiPlus/>
             </AsideRight>
          </Container>
       </div>
