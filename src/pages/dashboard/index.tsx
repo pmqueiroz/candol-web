@@ -8,7 +8,10 @@ import {
    FiCalendar,
    FiUser,
    FiUserPlus,
-   FiUsers
+   FiUsers,
+   FiEdit2,
+   FiCheckCircle,
+   FiMapPin
 } from 'react-icons/fi';
 import {
    Container,
@@ -18,6 +21,10 @@ import {
    AsideRight,
    Menu,
    TaskCard,
+   TaskInfo,
+   TaskTime,
+   TaskView,
+   TaskTools
 } from '../../styles/pages/dashboard';
 import logoImg from '../../assets/logo.svg';
 
@@ -169,19 +176,25 @@ export default function Dashboard() {
                <Scrollbars>
                   {data.map(task => (
                      <TaskCard key={task.trackerId}>
-                        <div>
-                           <div>
-                              <span>08</span>
-                              <span>30</span>
+                        <TaskView>
+                           <TaskTime>
+                              <span>08<span>30</span></span>
                               <label>{task.type}</label>
-                           </div>
-                           <span>{task.name}</span>
-                           <span>{task.licensePlate}</span>
-                           <span>{task.number1}</span>
-                           <span>{task.number2}</span>
-                           <span>{task.address}</span>
-                           <span>{task.association}</span>
-                        </div>
+                           </TaskTime>
+                           <TaskInfo>
+                              <span>{task.name}</span>
+                              <span>{task.licensePlate}</span>
+                              <span>{task.number1}</span>
+                              <span>{task.number2}</span>
+                              <span>{task.address}</span>
+                              <span>{task.association}</span>
+                           </TaskInfo>
+                           <TaskTools>
+                              <FiEdit2 />
+                              <FiCheckCircle />
+                              <FiMapPin />
+                           </TaskTools>
+                        </TaskView>
                      </TaskCard>
                   ))}
                </Scrollbars>

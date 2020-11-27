@@ -164,24 +164,69 @@ export const TaskCard = styled.div`
    & + div {
       margin-top: 4rem;
    }
+`;
 
-   div {
-      width: 100%;
-      height: 16rem;
-      background: var(--color-background);
-      box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.08);
-      border-radius: 2rem;
+export const TaskView = styled.div`
+   width: 100%;
+   height: 16rem;
+   background: var(--color-background);
+   box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.08);
+   border-radius: 2rem;
+   display: flex;
+   justify-content: start;
+   flex-direction: row;
+`;
 
-      div {
-         height: 100%;
-         width: 15rem;
-         box-shadow: none;
-         border-radius: 2rem 0 0 2rem;
-         background: var(--color-background-over);
-         span {
-            font: 500 5rem Roboto;
-            color: var(--color-primary)
-         }
+export const TaskInfo = styled.div`
+   flex: 1;
+   display: grid;
+   grid-template-columns: 15rem 3fr 1fr;
+   grid-template-rows: 1fr 1fr 1fr;
+   grid-template-areas:
+      "hour name . ."
+      "hour . . ."
+      "hour . . .";
+`;
+
+export const TaskTime = styled.div`
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   height: 100%;
+   width: 15rem;
+   box-shadow: none;
+   border-radius: 2rem 0 0 2rem;
+   background: var(--color-background-over);
+
+   span {
+      font: 500 7rem Roboto;
+      color: var(--color-primary);
+
+      span {
+         font: 500 3rem Roboto;
+      }
+   }
+
+   label {
+      font: 500 2rem Roboto;
+   }
+`;
+
+export const TaskTools = styled.div`
+   display: flex;
+   justify-content: space-evenly;
+   align-items: center;
+   flex-direction: column;
+   padding: 0 2rem;
+
+   svg {
+      font-size: 2.5rem;
+      transition: transform 0.2s;
+
+      &:hover {
+         cursor: pointer;
+         transform: translateY(-0.1rem);
       }
    }
 `;
