@@ -41,7 +41,9 @@ export const Header = styled.div`
          justify-content: center;
          align-items: center;
          margin: 0;
+         transition: border-color 0.2s;
          svg {
+            transition: color 0.2s;
             font-size: 2rem;
             color: var(--color-text-secondary);
          }
@@ -55,7 +57,7 @@ export const Header = styled.div`
          }
       }
       label {
-         margin: 0 1rem;
+         margin: 0 2rem;
          font: 500 1.8rem Roboto;
       }
    }
