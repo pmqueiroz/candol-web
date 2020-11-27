@@ -1,10 +1,24 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const Container = styled.div`
+interface ContainerProps {
+   hasModalOpened: boolean;
+}
+
+export const Container = styled.div<ContainerProps>`
    display: flex;
    height: 100vh;
    align-items: stretch;
    background: var(--color-background);
+
+   ${props =>
+		props.hasModalOpened &&
+		css`
+         -webkit-filter: blur(1.3px);
+         -moz-filter: blur(1.3px);
+         -o-filter: blur(1.3px);
+         -ms-filter: blur(1.3px);
+         filter: blur(1.3px);
+		`}
 `;
 
 export const Main = styled.div`
@@ -286,7 +300,47 @@ export const NoteCard = styled.div`
 
 export const AddNote = styled.div`
    background: var(--color-background);
-   width: 10rem;
-   height: 10rem;
+   box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.1);
+   width: 50rem;
+   height: auto;
+   min-height: 20rem;
    border-radius: 2.5rem;
+   position: relative;
+   display: flex;
+   justify-content: start;
+   align-items: center;
+   flex-direction: column;
+   padding: 1rem 0 3rem 0;
+   h2 {
+      color: var(--color-primary);
+      margin-bottom: 1rem;
+   }
+
+   form {
+      margin-top: 3rem;
+      width: 80%;
+   }
+
+   form input {
+      width: 100%;
+      border-bottom: 0.1rem solid var(--color-text-inactive);
+      padding: 0.2rem;
+   }
+
+   svg {
+      position: absolute;
+      bottom: 2rem;
+      right: 2rem;
+      font-size: 3rem;
+      transition: transform 0.2s;
+      color: var(--color-text-secondary);
+
+      &:hover {
+         cursor: pointer;
+         color: var(--color-check);
+         transform: translateY(-0.1rem);
+      }
+
+   }
+
 `;

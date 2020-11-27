@@ -1,5 +1,7 @@
 import Head from 'next/head';
 import { useState } from 'react';
+import { Form } from '@unform/web';
+import Input from '../../Components/TextAreaInput/index'
 import { Scrollbars } from 'react-custom-scrollbars';
 import {
    FiChevronLeft,
@@ -35,6 +37,7 @@ import Modal from '../../Components/Modal/index';
 export default function Dashboard() {
    const [ menuIsVisible, setMenuIsVisible ] = useState(false);
    const [ modalIsOpen, setIsOpen] = useState(false);
+   const [ notes, setNotes] = useState([]);
 
    function handleToggleModalVisibility() {
       setIsOpen(!modalIsOpen);
@@ -44,11 +47,21 @@ export default function Dashboard() {
       setMenuIsVisible(!menuIsVisible);
    }
 
+   function handleAddNewNote (data) {
+      const newNote = {
+         id: notes.length + 1,
+         message: data.note,
+      }
+
+      setNotes(oldNotes => [...oldNotes, newNote] )
+      console.log(notes)
+   }
+
    const data = [
       {
          name: "Pericleiton Rasta",
          licensePlate: "KKK 2B76",
-         trackerId: 9128391231231,
+         trackerId: 9128391231611231,
          number1: "71 9 9888-9978",
          number2: "71 9 8889-8879",
          association: "GTBlock",
@@ -58,7 +71,7 @@ export default function Dashboard() {
       {
          name: "Pericleiton Rasta",
          licensePlate: "KKK 2B76",
-         trackerId: 9128391231231,
+         trackerId: 9128395671231231,
          number1: "71 9 9888-9978",
          number2: "71 9 8889-8879",
          association: "GTBlock",
@@ -68,7 +81,7 @@ export default function Dashboard() {
       {
          name: "Pericleiton Rasta",
          licensePlate: "KKK 2B76",
-         trackerId: 9128391231231,
+         trackerId: 91283912124131231,
          number1: "71 9 9888-9978",
          number2: "71 9 8889-8879",
          association: "GTBlock",
@@ -78,7 +91,7 @@ export default function Dashboard() {
       {
          name: "Pericleiton Rasta",
          licensePlate: "KKK 2B76",
-         trackerId: 9128391231231,
+         trackerId: 9128391121231231,
          number1: "71 9 9888-9978",
          number2: "71 9 8889-8879",
          association: "GTBlock",
@@ -88,7 +101,7 @@ export default function Dashboard() {
       {
          name: "Pericleiton Rasta",
          licensePlate: "KKK 2B76",
-         trackerId: 9128391231231,
+         trackerId: 91283911112231231,
          number1: "71 9 9888-9978",
          number2: "71 9 8889-8879",
          association: "GTBlock",
@@ -96,16 +109,16 @@ export default function Dashboard() {
          type: "Instalação"
       },
    ]
-   const notes = [
-      {
-         id: 1,
-         message: "Verificar se o equipamento de 9 horas é um MXT",
-      },
-      {
-         id: 2,
-         message: "Acompanhar o técnico até a chegada, e ao chegar informar ao cliente para dar autorização na entrada",
-      }
-   ]
+   // const notes = [
+   //    {
+   //       id: 1,
+   //       message: "Verificar se o equipamento de 9 horas é um MXT",
+   //    },
+   //    {
+   //       id: 2,
+   //       message: "Acompanhar o técnico até a chegada, e ao chegar informar ao cliente para dar autorização na entrada",
+   //    }
+   // ]
 
    return (
       <div>
@@ -113,14 +126,22 @@ export default function Dashboard() {
             <title>Candol - Dashboard</title>
          </Head>
 
-         <Container>
-            <Modal
-               id="ModalAddNote"
-               isOpen={modalIsOpen}
-               onRequestClose={handleToggleModalVisibility}
-            >
-               <AddNote></AddNote>
-            </Modal>
+         <Modal
+            id="ModalAddNote"
+            isOpen={modalIsOpen}
+            onRequestClose={handleToggleModalVisibility}
+         >
+            <AddNote>
+               <h2>Nova Nota</h2>
+               <Form onSubmit={handleAddNewNote}>
+                  <Input name="note"/>
+                  <button type="submit">
+                     <FiCheckCircle />
+                  </button>
+               </Form>
+            </AddNote>
+         </Modal>
+         <Container hasModalOpened={modalIsOpen}>
             <AsideLeft>
                <img src={logoImg} alt="Condol"/>
                <Menu>
