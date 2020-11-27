@@ -8,6 +8,10 @@ export default createGlobalStyle`
       user-select: none;
    }
 
+   *:focus {
+      outline: none;
+   }
+
    body,
    input,
    button,

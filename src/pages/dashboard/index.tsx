@@ -106,9 +106,9 @@ export default function Dashboard() {
                         </div>
                      </li>
                      <li >
-                        <div className="menu submenu">
+                        <div className="menu submenu" onClick={handleMenuVisibility}>
                            <FiUsers />
-                           <a href="#" onClick={handleMenuVisibility}> Técnicos </a>
+                           <a>Técnicos</a>
                            {menuIsVisible ?
                               <FiChevronDown/>
                               :  <FiChevronRight/>
@@ -182,12 +182,14 @@ export default function Dashboard() {
                               <label>{task.type}</label>
                            </TaskTime>
                            <TaskInfo>
-                              <span>{task.name}</span>
-                              <span>{task.licensePlate}</span>
-                              <span>{task.number1}</span>
-                              <span>{task.number2}</span>
-                              <span>{task.address}</span>
-                              <span>{task.association}</span>
+                              <div className="namelicense">
+                                 <span>{task.name}</span>
+                                 <span>{task.licensePlate}</span>
+                              </div>
+                              <span className="number1">{task.number1}</span>
+                              <span className="number2">{task.number2}</span>
+                              <span className="address">{task.address}</span>
+                              <span className="association">{task.association}</span>
                            </TaskInfo>
                            <TaskTools>
                               <FiEdit2 />

@@ -119,6 +119,7 @@ export const Menu = styled.nav`
          &:hover {
             background: var(--color-background-darker);
             border-radius: 1rem;
+            cursor: pointer;
          }
       }
 
@@ -180,12 +181,39 @@ export const TaskView = styled.div`
 export const TaskInfo = styled.div`
    flex: 1;
    display: grid;
-   grid-template-columns: 15rem 3fr 1fr;
+   padding: 2rem 1rem;
+   grid-template-columns: 1fr 4fr;
    grid-template-rows: 1fr 1fr 1fr;
    grid-template-areas:
-      "hour name . ."
-      "hour . . ."
-      "hour . . .";
+      "namelicense namelicense"
+      "number1 address"
+      "number2 association";
+
+   font: 500 1.7rem Roboto;
+
+   .namelicense {
+      grid-area: namelicense;
+      span {
+         font: 500 2.3rem Roboto;
+
+         & + span {
+            margin-left: 1rem;
+            font: 500 1.7rem Roboto;
+         }
+      }
+   }
+   .number1 {
+      grid-area: number1;
+   }
+   .number2 {
+      grid-area: number2;
+   }
+   .address {
+      grid-area: address;
+   }
+   .association{
+      grid-area: association;
+   }
 `;
 
 export const TaskTime = styled.div`
@@ -223,6 +251,7 @@ export const TaskTools = styled.div`
    svg {
       font-size: 2.5rem;
       transition: transform 0.2s;
+      color: var(--color-text-secondary);
 
       &:hover {
          cursor: pointer;
