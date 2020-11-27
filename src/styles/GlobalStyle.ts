@@ -32,6 +32,7 @@ export default createGlobalStyle`
       --color-background: #ffffff;
       --color-background-darker: #E6E9EF;
       --color-background-select: #EEF0F2;
+      --color-background-over: #EEEFF2;
    }
 
    @media (min-width: 850px) {

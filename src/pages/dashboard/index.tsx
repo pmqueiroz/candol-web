@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { useState } from 'react';
+import { Scrollbars } from 'react-custom-scrollbars';
 import {
    FiChevronLeft,
    FiChevronRight,
@@ -9,7 +10,15 @@ import {
    FiUserPlus,
    FiUsers
 } from 'react-icons/fi';
-import { Container, Main, Header, AsideLeft, AsideRight, Menu } from '../../styles/pages/dashboard';
+import {
+   Container,
+   Main,
+   Header,
+   AsideLeft,
+   AsideRight,
+   Menu,
+   TaskCard,
+} from '../../styles/pages/dashboard';
 import logoImg from '../../assets/logo.svg';
 
 export default function Dashboard() {
@@ -18,6 +27,59 @@ export default function Dashboard() {
    function handleMenuVisibility () {
       setMenuIsVisible(!menuIsVisible);
    }
+
+   const data = [
+      {
+         name: "Pericleiton Rasta",
+         licensePlate: "KKK 2B76",
+         trackerId: 9128391231231,
+         number1: "71 9 9888-9978",
+         number2: "71 9 8889-8879",
+         association: "GTBlock",
+         address: "Rua da Ficção, Número 1, Quadra B",
+         type: "Instalação"
+      },
+      {
+         name: "Pericleiton Rasta",
+         licensePlate: "KKK 2B76",
+         trackerId: 9128391231231,
+         number1: "71 9 9888-9978",
+         number2: "71 9 8889-8879",
+         association: "GTBlock",
+         address: "Rua da Ficção, Número 1, Quadra B",
+         type: "Instalação"
+      },
+      {
+         name: "Pericleiton Rasta",
+         licensePlate: "KKK 2B76",
+         trackerId: 9128391231231,
+         number1: "71 9 9888-9978",
+         number2: "71 9 8889-8879",
+         association: "GTBlock",
+         address: "Rua da Ficção, Número 1, Quadra B",
+         type: "Instalação"
+      },
+      {
+         name: "Pericleiton Rasta",
+         licensePlate: "KKK 2B76",
+         trackerId: 9128391231231,
+         number1: "71 9 9888-9978",
+         number2: "71 9 8889-8879",
+         association: "GTBlock",
+         address: "Rua da Ficção, Número 1, Quadra B",
+         type: "Instalação"
+      },
+      {
+         name: "Pericleiton Rasta",
+         licensePlate: "KKK 2B76",
+         trackerId: 9128391231231,
+         number1: "71 9 9888-9978",
+         number2: "71 9 8889-8879",
+         association: "GTBlock",
+         address: "Rua da Ficção, Número 1, Quadra B",
+         type: "Instalação"
+      },
+   ]
 
    return (
       <div>
@@ -104,6 +166,25 @@ export default function Dashboard() {
                      </button>
                   </div>
                </Header>
+               <Scrollbars>
+                  {data.map(task => (
+                     <TaskCard>
+                        <div>
+                           <div>
+                              <span>08</span>
+                              <span>30</span>
+                              <label>{task.type}</label>
+                           </div>
+                           <span>{task.name}</span>
+                           <span>{task.licensePlate}</span>
+                           <span>{task.number1}</span>
+                           <span>{task.number2}</span>
+                           <span>{task.address}</span>
+                           <span>{task.association}</span>
+                        </div>
+                     </TaskCard>
+                  ))}
+               </Scrollbars>
             </Main>
             <AsideRight>
             </AsideRight>

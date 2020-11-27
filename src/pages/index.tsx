@@ -5,6 +5,7 @@ export default function Home() {
     <div>
       <Head>
         <title>Candol</title>
+        <meta http-equiv="refresh" content="0; URL=/dashboard" />
       </Head>
 
       <h1>Hello Word</h1>

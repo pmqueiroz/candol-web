@@ -13,14 +13,17 @@ export const Main = styled.div`
    width: 130rem;
    justify-content: center;
    align-items: start;
+   flex-direction: column;
    padding: 5rem;
 `;
 
 export const Header = styled.div`
    display: flex;
    flex: 1;
+   width: 100%;
    justify-content: space-between;
    align-items: center;
+   margin-bottom: 5rem;
 
    span {
       font: 500 4.8rem Roboto;
@@ -77,10 +80,10 @@ export const AsideLeft = styled.div`
       align-items: center;
       font: 500 1.8rem Roboto;
       img {
-         height: 6rem;
-         width: 6rem;
+         height: 4rem;
+         width: 4rem;
          border-radius: 1rem;
-         margin: 2rem;
+         margin-right: 1.5rem;
       }
    }
 `;
@@ -150,4 +153,35 @@ export const AsideRight = styled.div`
    display: flex;
    flex: 1;
    background: var(--color-background);
+`;
+
+export const TaskCard = styled.div`
+   width: auto;
+   height: auto;
+   padding: 0 5%;
+   margin-top: 1.6rem;
+
+   & + div {
+      margin-top: 4rem;
+   }
+
+   div {
+      width: 100%;
+      height: 16rem;
+      background: var(--color-background);
+      box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.08);
+      border-radius: 2rem;
+
+      div {
+         height: 100%;
+         width: 15rem;
+         box-shadow: none;
+         border-radius: 2rem 0 0 2rem;
+         background: var(--color-background-over);
+         span {
+            font: 500 5rem Roboto;
+            color: var(--color-primary)
+         }
+      }
+   }
 `;
