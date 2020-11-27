@@ -26,7 +26,7 @@ export const Header = styled.div`
    margin-bottom: 5rem;
 
    span {
-      font: 500 4.8rem Roboto;
+      font: 700 4.8rem Roboto;
       color: var(--color-primary);
    }
 

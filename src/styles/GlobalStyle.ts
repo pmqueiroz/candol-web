@@ -33,7 +33,23 @@ export default createGlobalStyle`
       --color-background-darker: #E6E9EF;
       --color-background-select: #EEF0F2;
       --color-background-over: #EEEFF2;
+      --color-scrollbar-thumb: #C4C4C4;
    }
+
+   ::-webkit-scrollbar {
+      width: 0.7rem;
+   }
+
+   ::-webkit-scrollbar-track {
+      background: transparent;
+      border-radius: 0.5rem;
+   }
+   ::-webkit-scrollbar-thumb {
+      background: var(--color-scrollbar-thumb);
+      border-radius: 0.5rem;
+   }
+
+   ::-webkit-scrollbar-corner { background: transparent; }
 
    @media (min-width: 850px) {
       :root{

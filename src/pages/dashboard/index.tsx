@@ -168,7 +168,7 @@ export default function Dashboard() {
                </Header>
                <Scrollbars>
                   {data.map(task => (
-                     <TaskCard>
+                     <TaskCard key={task.trackerId}>
                         <div>
                            <div>
                               <span>08</span>
