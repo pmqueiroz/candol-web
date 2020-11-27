@@ -173,6 +173,10 @@ export const AsideRight = styled.div`
    padding: 6rem 3rem 3rem 3rem;
    background: var(--color-background);
 
+   h2{
+      margin-bottom: 1rem;
+   }
+
    svg {
       margin: 1.5rem 0 0 auto;
       font-size: 2rem;
@@ -291,7 +295,7 @@ export const TaskTools = styled.div`
 export const NoteCard = styled.div`
    width: 100%;
    height: auto;
-   margin-top: 2rem;
+   margin-top: 1rem;
    padding: 1rem;
    background: var(--color-background-darker);
    border-radius: 1rem;
@@ -327,7 +331,7 @@ export const AddNote = styled.div`
       padding: 0.2rem;
    }
 
-   svg {
+   button svg {
       position: absolute;
       bottom: 2rem;
       right: 2rem;
@@ -338,9 +342,23 @@ export const AddNote = styled.div`
       &:hover {
          cursor: pointer;
          color: var(--color-check);
+         transform: translateY(-0.2rem);
+      }
+   }
+
+   div svg {
+      position: absolute;
+      top: 1.3rem;
+      right: 2rem;
+      font-size: 3rem;
+      transition: transform 0.2s;
+      color: var(--color-text-secondary);
+
+      &:hover {
+         cursor: pointer;
+         color: #ef476f;
          transform: translateY(-0.1rem);
       }
-
    }
 
 `;

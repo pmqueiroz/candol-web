@@ -14,7 +14,8 @@ import {
    FiEdit2,
    FiCheckCircle,
    FiMapPin,
-   FiPlus
+   FiPlus,
+   FiX
 } from 'react-icons/fi';
 import {
    Container,
@@ -48,13 +49,15 @@ export default function Dashboard() {
    }
 
    function handleAddNewNote (data) {
+      if (!data.note) return
+
       const newNote = {
          id: notes.length + 1,
          message: data.note,
       }
 
-      setNotes(oldNotes => [...oldNotes, newNote] )
-      console.log(notes)
+      setNotes(oldNotes => [...oldNotes, newNote] );
+      handleToggleModalVisibility();
    }
 
    const data = [
@@ -109,16 +112,6 @@ export default function Dashboard() {
          type: "Instalação"
       },
    ]
-   // const notes = [
-   //    {
-   //       id: 1,
-   //       message: "Verificar se o equipamento de 9 horas é um MXT",
-   //    },
-   //    {
-   //       id: 2,
-   //       message: "Acompanhar o técnico até a chegada, e ao chegar informar ao cliente para dar autorização na entrada",
-   //    }
-   // ]
 
    return (
       <div>
@@ -134,6 +127,7 @@ export default function Dashboard() {
             <AddNote>
                <h2>Nova Nota</h2>
                <Form onSubmit={handleAddNewNote}>
+                  <div><FiX onClick={handleToggleModalVisibility}/></div>
                   <Input name="note"/>
                   <button type="submit">
                      <FiCheckCircle />
