@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Form } from '@unform/web';
 import Input from '../../Components/TextAreaInput/index'
 import { Scrollbars } from 'react-custom-scrollbars';
@@ -35,10 +35,35 @@ import {
 import logoImg from '../../assets/logo.svg';
 import Modal from '../../Components/Modal/index';
 
+interface NoteProps {
+   id: number;
+   message: string;
+}
+
+const isServer = typeof window === "undefined";
+
 export default function Dashboard() {
    const [ menuIsVisible, setMenuIsVisible ] = useState(false);
    const [ modalIsOpen, setIsOpen] = useState(false);
-   const [ notes, setNotes] = useState([]);
+   const [ notes, setNotes] = useState<NoteProps[]>(() => {
+      if (isServer) return [];
+      const storedMatches = localStorage.getItem(
+         '@Candol:notes',
+      );
+
+      if (storedMatches) {
+         return JSON.parse(storedMatches);
+      }
+
+      return [];
+   });
+
+   useEffect(() => {
+      localStorage.setItem(
+         '@Candol:notes',
+        JSON.stringify(notes),
+      );
+    }, [notes]);
 
    function handleToggleModalVisibility() {
       setIsOpen(!modalIsOpen);
@@ -56,7 +81,7 @@ export default function Dashboard() {
          message: data.note,
       }
 
-      setNotes(oldNotes => [...oldNotes, newNote] );
+      setNotes([...notes, newNote]);
       handleToggleModalVisibility();
    }
 
