@@ -30,7 +30,7 @@ export default createGlobalStyle`
       --color-text-secondary: #B2AEC2;
       --color-text-inactive: #B8B8B8;
       --color-background: #ffffff;
-      --color-background-darker: #F7F8FA;
+      --color-background-darker: #E6E9EF;
       --color-background-select: #EEF0F2;
    }
 

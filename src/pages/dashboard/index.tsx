@@ -31,40 +31,51 @@ export default function Dashboard() {
                <Menu>
                   <ul>
                      <li>
-                        <FiCalendar />
-                        <a href="#">Calendário</a>
+                        <div className="menu">
+                           <FiCalendar />
+                           <a href="#">Calendário</a>
+                        </div>
                      </li>
                      <li >
-                        <FiUsers />
-                        <a href="#" onClick={handleMenuVisibility}>
-                           Técnicos
+                        <div className="menu submenu">
+                           <FiUsers />
+                           <a href="#" onClick={handleMenuVisibility}> Técnicos </a>
                            {menuIsVisible ?
                               <FiChevronDown/>
-                           :  <FiChevronRight/>
+                              :  <FiChevronRight/>
                            }
-                        </a>
+                        </div>
                         {menuIsVisible ?
-
                            <ul>
                               <li>
-                                 <FiUser />
-                                 <a href="#">Daniel</a>
+                                 <div>
+                                    <FiUser />
+                                    <a href="#">Daniel</a>
+                                 </div>
                               </li>
                               <li>
-                                 <FiUser />
-                                 <a href="#">Virgílio</a>
+                                 <div>
+                                    <FiUser />
+                                    <a href="#">Virgílio</a>
+                                 </div>
                               </li>
                               <li>
-                                 <FiUser />
-                                 <a href="#">Sandro</a>
+                                 <div>
+                                    <FiUser />
+                                    <a href="#">Sandro</a>
+                                 </div>
                               </li>
                               <li>
-                                 <FiUser />
-                                 <a href="#">Pitta</a>
+                                 <div>
+                                    <FiUser />
+                                    <a href="#">Pitta</a>
+                                 </div>
                               </li>
                               <li className="addNew">
-                                 <FiUserPlus />
-                                 <a href="#">Adicionar</a>
+                                 <div>
+                                    <FiUserPlus />
+                                    <a href="#">Adicionar</a>
+                                 </div>
                               </li>
                            </ul>
                         : null

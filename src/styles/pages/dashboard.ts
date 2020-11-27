@@ -91,17 +91,44 @@ export const Menu = styled.nav`
    ul {
       list-style: none;
       width: 100%;
+
+      li div{
+         display: flex;
+         align-items: center;
+      }
+
+      .submenu {
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+
+         svg:last-of-type {
+            margin-left: auto;
+            margin-right: 0.5rem;
+         }
+      }
+
+      .menu {
+         padding-left: 1rem;
+
+         &:hover {
+            background: var(--color-background-darker);
+            border-radius: 1rem;
+         }
+      }
+
       li a {
          color: var(--color-text-base);
          text-decoration: none;
-         padding: 1rem;
+         padding-left: 1rem;
       }
 
       ul li {
          margin-left: 4rem;
          border-radius: 1rem;
-         transition: color 0.2s linear;
+         transition: transform 0.2s;
          &:hover {
+            transform: translateX(0.7rem);
             * {
                color: var(--color-primary);
             }
