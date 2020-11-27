@@ -4,6 +4,10 @@ interface ContainerProps {
    hasModalOpened: boolean;
 }
 
+interface NoteCardProps {
+   hasOptionsOpened: boolean;
+}
+
 export const Container = styled.div<ContainerProps>`
    display: flex;
    height: 100vh;
@@ -24,7 +28,7 @@ export const Container = styled.div<ContainerProps>`
 export const Main = styled.div`
    display: flex;
    background: var(--color-background-darker);
-   width: 130rem;
+   width: 120rem;
    justify-content: center;
    align-items: start;
    flex-direction: column;
@@ -86,7 +90,8 @@ export const AsideLeft = styled.div`
    align-items: center;
    flex-direction: column;
    margin: 6rem 3rem 3rem 3rem;
-   flex: 1;
+   width: 100%;
+   max-width: 25rem;
    background: var(--color-background);
    div.user {
       display: flex;
@@ -292,14 +297,48 @@ export const TaskTools = styled.div`
    }
 `;
 
-export const NoteCard = styled.div`
-   width: 100%;
+export const NoteCard = styled.div<NoteCardProps>`
+   width: 98%;
    height: auto;
    margin-top: 1rem;
    padding: 1rem;
    background: var(--color-background-darker);
    border-radius: 1rem;
+   word-break: break-word;
    font: 400 1.6rem Roboto;
+   position: relative;
+
+   ${props =>
+   props.hasOptionsOpened &&
+   css`
+      color: var(--color-text-base-smooth);
+
+      svg {
+         color: var(--color-text-base);
+      }
+   `}
+
+   ${props =>
+   !props.hasOptionsOpened &&
+   css`
+      svg {
+         display: none;
+      }
+   `}
+
+   svg {
+      position: absolute;
+      top: 35%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 2.6rem;
+      stroke-width: 0.2rem;
+      transition: color 0.2s;
+
+      &:hover {
+         color: #ef476f
+      }
+   }
 `;
 
 export const AddNote = styled.div`

@@ -15,7 +15,8 @@ import {
    FiCheckCircle,
    FiMapPin,
    FiPlus,
-   FiX
+   FiX,
+   FiXCircle
 } from 'react-icons/fi';
 import {
    Container,
@@ -45,6 +46,7 @@ const isServer = typeof window === "undefined";
 export default function Dashboard() {
    const [ menuIsVisible, setMenuIsVisible ] = useState(false);
    const [ modalIsOpen, setIsOpen] = useState(false);
+   const [ noteOptionsIsOpened, setNoteOptionsIsOpened] = useState(true);
    const [ notes, setNotes] = useState<NoteProps[]>(() => {
       if (isServer) return [];
       const storedMatches = localStorage.getItem(
@@ -270,14 +272,20 @@ export default function Dashboard() {
             <AsideRight>
                <h2>Notas</h2>
 
-               {notes.map(note => (
-                  <NoteCard key={note.id}>
-                     <p>{note.message}</p>
+               <Scrollbars>
+                  {notes.map(note => (
+                     <NoteCard
+                        hasOptionsOpened={noteOptionsIsOpened}
+                        onClick={() => setNoteOptionsIsOpened(!noteOptionsIsOpened)}
+                        key={note.id}
+                     >
+                        <p>{note.message}</p>
+                        <FiXCircle onClick={() => {}}/>
+                     </NoteCard>
+                  ))}
+                  <FiPlus onClick={handleToggleModalVisibility}/>
+               </Scrollbars>
 
-                  </NoteCard>
-               ))}
-
-               <FiPlus onClick={handleToggleModalVisibility}/>
             </AsideRight>
          </Container>
       </div>

@@ -31,6 +31,7 @@ export default createGlobalStyle`
       --color-primary: #863FCE;
       --color-primary-darker: #702EB2;
       --color-text-base: #535067;
+      --color-text-base-smooth: rgba(83,80,103,0.3);
       --color-text-secondary: #B2AEC2;
       --color-text-inactive: #B8B8B8;
       --color-background: #ffffff;
@@ -39,6 +40,7 @@ export default createGlobalStyle`
       --color-background-over: #EEEFF2;
       --color-scrollbar-thumb: #C4C4C4;
       --color-check: #06d6a0;
+      --color-important: #ef476f;
    }
 
    ::-webkit-scrollbar {
