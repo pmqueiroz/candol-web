@@ -27,9 +27,10 @@ import {
    TaskView,
    TaskTools,
    NoteCard,
+   AddNote
 } from '../../styles/pages/dashboard';
 import logoImg from '../../assets/logo.svg';
-import Modal from 'react-modal';
+import Modal from '../../Components/Modal/index';
 
 export default function Dashboard() {
    const [ menuIsVisible, setMenuIsVisible ] = useState(false);
@@ -114,10 +115,11 @@ export default function Dashboard() {
 
          <Container>
             <Modal
+               id="ModalAddNote"
                isOpen={modalIsOpen}
                onRequestClose={handleToggleModalVisibility}
-               contentLabel="Example Modal"
-            >aaaa
+            >
+               <AddNote></AddNote>
             </Modal>
             <AsideLeft>
                <img src={logoImg} alt="Condol"/>
