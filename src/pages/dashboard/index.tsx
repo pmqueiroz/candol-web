@@ -291,11 +291,10 @@ export default function Dashboard() {
                         <FiXCircle onClick={() => handleRemoveNote(note.id)}/>
                      </NoteCard>
                   ))}
-                  <ARFooter>
-                     <FiPlus onClick={handleToggleModalVisibility}/>
-                  </ARFooter>
                </Scrollbars>
-
+               <ARFooter>
+                  <FiPlus onClick={handleToggleModalVisibility}/>
+               </ARFooter>
             </AsideRight>
          </Container>
       </div>

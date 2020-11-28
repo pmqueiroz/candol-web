@@ -338,7 +338,7 @@ export const NoteCard = styled.div<NoteCardProps>`
       transition: color 0.2s;
 
       &:hover {
-         color: #ef476f
+         color: var(--color-important)
       }
    }
 `;
@@ -397,7 +397,7 @@ export const AddNote = styled.div`
 
       &:hover {
          cursor: pointer;
-         color: #ef476f;
+         color: var(--color-important);
          transform: translateY(-0.1rem);
       }
    }
@@ -405,7 +405,17 @@ export const AddNote = styled.div`
 `;
 
 export const ARFooter = styled.div`
-    width: 100%;
+   width: 100%;
    display: flex;
    justify-content: end;
+   svg {
+      font-size: 3rem;
+      transition: all 0.2s;
+
+      &:hover {
+         transform: translateY(-0.3rem);
+         color: var(--color-check);
+      }
+
+   }
 `;
