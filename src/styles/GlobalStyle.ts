@@ -39,6 +39,7 @@ export default createGlobalStyle`
       --color-background-select: #EEF0F2;
       --color-background-over: #EEEFF2;
       --color-scrollbar-thumb: #C4C4C4;
+      --color-placeholder: #ACA9A9;
       --color-check: #06d6a0;
       --color-important: #ef476f;
    }

@@ -13,6 +13,7 @@ export const Container = styled.div<ContainerProps>`
    height: 100vh;
    align-items: stretch;
    background: var(--color-background);
+   transition: filter 0.2s;
 
    ${props =>
 		props.hasModalOpened &&
