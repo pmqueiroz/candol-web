@@ -307,6 +307,7 @@ export const NoteCard = styled.div<NoteCardProps>`
    word-break: break-word;
    font: 400 1.6rem Roboto;
    position: relative;
+   transition: color 0.2s;
 
    ${props =>
    props.hasOptionsOpened &&
@@ -401,4 +402,10 @@ export const AddNote = styled.div`
       }
    }
 
+`;
+
+export const ARFooter = styled.div`
+    width: 100%;
+   display: flex;
+   justify-content: end;
 `;

@@ -31,7 +31,8 @@ import {
    TaskView,
    TaskTools,
    NoteCard,
-   AddNote
+   AddNote,
+   ARFooter
 } from '../../styles/pages/dashboard';
 import logoImg from '../../assets/logo.svg';
 import Modal from '../../Components/Modal/index';
@@ -46,7 +47,7 @@ const isServer = typeof window === "undefined";
 export default function Dashboard() {
    const [ menuIsVisible, setMenuIsVisible ] = useState(false);
    const [ modalIsOpen, setIsOpen] = useState(false);
-   const [ noteOptionsIsOpened, setNoteOptionsIsOpened] = useState(true);
+   const [ noteOptionsIsOpened, setNoteOptionsIsOpened] = useState(false);
    const [ notes, setNotes] = useState<NoteProps[]>(() => {
       if (isServer) return [];
       const storedMatches = localStorage.getItem(
@@ -290,7 +291,9 @@ export default function Dashboard() {
                         <FiXCircle onClick={() => handleRemoveNote(note.id)}/>
                      </NoteCard>
                   ))}
-                  <FiPlus onClick={handleToggleModalVisibility}/>
+                  <ARFooter>
+                     <FiPlus onClick={handleToggleModalVisibility}/>
+                  </ARFooter>
                </Scrollbars>
 
             </AsideRight>
