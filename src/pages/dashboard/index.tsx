@@ -79,12 +79,19 @@ export default function Dashboard() {
       if (!data.note) return
 
       const newNote = {
-         id: notes.length + 1,
+         id: Date.now(),
          message: data.note,
       }
 
       setNotes([...notes, newNote]);
       handleToggleModalVisibility();
+   }
+
+   function handleRemoveNote (id) {
+      const newNotes = notes.filter(note => {
+         return note.id !== id;
+      })
+      setNotes(newNotes);
    }
 
    const data = [
@@ -280,7 +287,7 @@ export default function Dashboard() {
                         key={note.id}
                      >
                         <p>{note.message}</p>
-                        <FiXCircle onClick={() => {}}/>
+                        <FiXCircle onClick={() => handleRemoveNote(note.id)}/>
                      </NoteCard>
                   ))}
                   <FiPlus onClick={handleToggleModalVisibility}/>

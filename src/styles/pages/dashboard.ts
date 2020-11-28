@@ -298,7 +298,7 @@ export const TaskTools = styled.div`
 `;
 
 export const NoteCard = styled.div<NoteCardProps>`
-   width: 98%;
+   width: 95%;
    height: auto;
    margin-top: 1rem;
    padding: 1rem;
@@ -328,11 +328,12 @@ export const NoteCard = styled.div<NoteCardProps>`
 
    svg {
       position: absolute;
-      top: 35%;
+      top: 50%;
       left: 50%;
+      margin: 0!important;
       transform: translate(-50%, -50%);
-      font-size: 2.6rem;
-      stroke-width: 0.2rem;
+      font-size: 2.6rem!important;
+      stroke-width: 0.2rem!important;
       transition: color 0.2s;
 
       &:hover {
